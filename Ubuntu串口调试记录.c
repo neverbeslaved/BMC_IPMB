@@ -1,0 +1,1 @@
+﻿cat /proc/driver/serial 查看板卡已定义串口。

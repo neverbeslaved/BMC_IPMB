@@ -105,6 +105,35 @@
         return (TRUE);    
     }  
 	
+//	int test_com(char trans_data, char recv_data )
+    int main()
+	{
+		printf("test COM-arm\n");
+		int fd;
+		fd =open("/dev/ttyS2", O_RDWR | O_NOCTTY| O_NDELAY);
+		if(fd == -1)
+		{
+			perror("serialport open failed!\n");
+		}
+		else
+		{
+			printf("open %s succesful!\n", ttyname(fd));
+		}
+		
+		set_speed(fd, 115200);
+		if(set_Parity(fd, 8, 1, 'N') ==FALSE)
+		{
+			printf("set parity failed!\n");
+			exit(0);
+		}
+		write(fd, trans_data, 1);
+		usleep(5000);
+		int recv_buff;
+		while(read(fd, recv_data,  )
+		{
+			
+		}
+	}
 	
 	
 	

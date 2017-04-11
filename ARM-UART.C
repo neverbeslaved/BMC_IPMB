@@ -131,7 +131,8 @@
         }  
       
         set_speed(fd,115200);  
-        if (set_Parity(fd,8,1,'N') == FALSE)  {  
+        if (set_Parity(fd,8,1,'N') == FALSE)  
+		{  
             printf("Set Parity Error\n");  
             exit (0);  
         }  

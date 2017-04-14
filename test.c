@@ -92,7 +92,7 @@ int uart_recv(int fd, char *data, int datalen)
 int main()
 {
 	init_serial();
-	char trans_data[] = {0xe0, 0xe1};
+	char trans_data[] = {0xFE};
 	char get_data[11];
 	memset(get_data, 0, sizeof(char)*11);
 	
@@ -100,7 +100,7 @@ int main()
 	
 	uart_send(serial_fd, trans_data, 11);
 	printf("\n");
-	usleep(500000);
+	usleep(1000);
 	uart_recv(serial_fd, get_data, 11);
 	printf("receive: %s\n", get_data);
 	memset(get_data, 0, sizeof(char)*11);
